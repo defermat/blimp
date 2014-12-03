@@ -9,7 +9,7 @@ sub drun {
   my $out;
 
   $arg    = shift;
-  $docker = "docker";
+  $docker = "docker --tls";
   $me     = "blimp::docker::drun";
 
   # XXX shell injection issue here - needs work
@@ -62,7 +62,7 @@ sub gethostbyname {
 
   $name = shift;
 
-  $out  = drun("hosts");
+  $out  = drun("machines");
   $host = "";
 
   @lines = split(/\n/, $out);
